@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(./pexels-kubrarkan-27940736.jpg);
+  backdrop-filter: blur(5px);
+  font-family: Montserrat;
+}
+
+.container {
+  max-width: 460px;
+  width: 100%;
+  height: 100%;
+  max-height: 600px;
+  overflow-x: hidden;
+  padding: 35px;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: fadeIn 3s forwards;
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  font-size: 25px;
+}
+
+.intro-text-left,
+.intro-text-right {
+  transition: transform 2s ease;
+  animation: 3s, slideApart 2s 2s forwards;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slideApart {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.intro-text-right {
+  animation: slideApartRight 2s 2s forwards;
+}
+
+@keyframes slideApartRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
